@@ -1,6 +1,6 @@
 {
-  "name": "TwinCal",
-  "version": "0.0.1",
+  "name": "twincal",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -55,9 +55,20 @@
     "component",
     "react",
     "Griffin Ui"
+    , "date", "range", "picker", "calendar", "datepicker"
+
   ],
   "author": "Rajan Prajapati",
   "dependencies": {
     "date-fns": "^4.1.0"
-  }
+  } ,
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/rajanprajapati1/TwinCal---React-Date-Range-Picker.git"
+},
+"bugs": {
+  "url": "https://github.com/rajanprajapati1/TwinCal---React-Date-Range-Picker/issues"
+},
+"homepage": "https://github.com/rajanprajapati1/TwinCal---React-Date-Range-Picker#readme"
+
 }
