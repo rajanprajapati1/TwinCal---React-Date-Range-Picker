@@ -4,6 +4,10 @@
 
 ---
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rajanprajapati1/TwinCal---React-Date-Range-Picker/refs/heads/main/src/components/ezgif-193e2ae8ac44c2.gif" alt="TwinCal Demo" style="width: 100%; max-width: 100%; height: 500px; object-fit: cover;" />
+</p>
+
 ## ✨ Features
 
 - 📅 **Date range selection** with start and end dates
