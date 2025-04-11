@@ -4,6 +4,10 @@
 
 ---
 
+<p align="center">
+  <img src="https://s1.ezgif.com/tmp/ezgif-193e2ae8ac44c2.gif" alt="TwinCal Demo" style="width: 100%; max-width: 100%; height: 500px; object-fit: cover;" />
+</p>
+
 ## ✨ Features
 
 - 📅 **Date range selection** with start and end dates
