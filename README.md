@@ -1,172 +1,124 @@
-# 🦅 Griffin UI
+# 🗓️ TwinCal - React Date Range Picker
 
-**Griffin UI** is a modern, flexible React component library designed to help developers build fast, clean, and responsive interfaces with minimal effort. Built for React and Next.js applications, it includes a growing collection of reusable UI components.
-
-> ⚡️ Fast setup. 🎨 Clean design. 🧩 Developer friendly.
+**TwinCal** is a modern, minimal, and fully customizable **date range picker** built with **React**, **styled-components**, and **date-fns**. Designed to fit beautifully into modern design systems, TwinCal offers performance, flexibility, and accessibility without the bloat.
 
 ---
 
-## 📦 Installation
+## ✨ Features
+
+- 📆 Intuitive and elegant **date range selection**
+- 💅 Styled with `styled-components` for full theming and customization
+- ⚡ Fast and lightweight with `date-fns`
+- ⌨️ Keyboard accessible and screen-reader friendly
+- 📱 Fully responsive (mobile-first)
+- 🎯 Zero external UI dependencies (integrates into any design system)
+
+---
+
+## 🚀 Installation
+
+First, install via npm:
 
 ```bash
-npm install griffinui
+npm install twincal
 ```
 
-or
+Or if you're using `yarn`:
 
 ```bash
-yarn add griffinui
+yarn add twincal
 ```
 
 ---
 
-## 🚀 Quick Start
-
-1. **Import global styles** (once in your root entry file):
+## 🧩 Usage
 
 ```tsx
-import 'griffinui/dist/index.css';
-```
+import React from 'react';
+import { DateRangePicker } from 'twincal';
 
-2. **Use components in your app:**
-
-```tsx
-import {
-  Button,
-  Badge,
-  Divider,
-  Skeleton,
-  Spacer,
-  Tooltip,
-  Tabs,
-} from 'griffinui';
+const App = () => {
+  return (
+    <div>
+      <DateRangePicker
+        startDate={new Date()}
+        endDate={null}
+        onChange={({ startDate, endDate }) => {
+          console.log('Range selected:', { startDate, endDate });
+        }}
+      />
+    </div>
+  );
+};
 ```
 
 ---
 
-## 🧩 Components & Examples
+## 📦 Props
 
-### 🔘 Button
-
-```tsx
-<Button onClick={() => alert('Clicked!')} variant="primary" size="md">
-  Click Me
-</Button>
-```
-
-Props:
-- `variant`: `primary` | `secondary` | `outline`
-- `size`: `sm` | `md` | `lg`
-
----
-
-### 🎖️ Badge
-
-```tsx
-<Badge color="green">New</Badge>
-```
-
-Props:
-- `color`: `blue` | `green` | `red` | `gray`
-
----
-
-### 📏 Divider
-
-```tsx
-<p>Above</p>
-<Divider />
-<p>Below</p>
-```
-
-Props:
-- `thickness`, `color`, `margin` (optional)
-
----
-
-### 🦴 Skeleton
-
-```tsx
-<Skeleton width="200px" height="20px" />
-```
-
-Props:
-- `width`, `height`
-
----
-
-### 📐 Spacer
-
-```tsx
-<Spacer size="lg" />
-```
-
-Props:
-- `size`: `xs` | `sm` | `md` | `lg` | `xl`
-
----
-
-### 💬 Tooltip
-
-```tsx
-<Tooltip content="Tooltip text">
-  <button>Hover me</button>
-</Tooltip>
-```
-
-Props:
-- `content`: tooltip text
-- `position`: `top` | `right` | `bottom` | `left` *(optional)*
-
----
-
-### 🗂️ Tabs
-
-```tsx
-<Tabs
-  tabs={[
-    { label: 'Tab 1', content: <p>This is Tab 1</p> },
-    { label: 'Tab 2', content: <p>This is Tab 2</p> },
-  ]}
-/>
-```
-
-Props:
-- `tabs`: Array of `{ label: string, content: ReactNode }`
+| Prop         | Type                         | Description                                              |
+|--------------|------------------------------|----------------------------------------------------------|
+| `startDate`  | `Date \| null`               | Selected start date                                      |
+| `endDate`    | `Date \| null`               | Selected end date                                        |
+| `onChange`   | `({ startDate, endDate }) => void` | Callback when dates are selected                   |
+| `minDate`    | `Date`                       | Optional minimum selectable date                         |
+| `maxDate`    | `Date`                       | Optional maximum selectable date                         |
+| `disabled`   | `boolean`                    | Disable interaction                                      |
+| `locale`     | `Locale` from `date-fns`     | Customize locale (e.g., `enUS`, `hiIN`)                  |
+| `format`     | `string`                     | Date format string (e.g., `dd/MM/yyyy`)                  |
+| `fullWidth`  | `boolean`                    | Stretch component to fill container                      |
 
 ---
 
 ## 🛠 Customization
 
-Griffin UI components are lightweight and styleable. You can extend or override styles using your preferred CSS-in-JS solution or utility classes.
+You can override all styled-components using `styled-components`’ built-in features or extend the component to create your own styles.
 
----
+```tsx
+import styled from 'styled-components';
+import { DateRangePicker } from 'twincal';
 
-## 🧪 Storybook (Coming Soon)
+const CustomPicker = styled(DateRangePicker)`
+  /* your custom styles */
+`;
 
-Component previews and documentation will be available in the Storybook UI shortly.
-
----
-
-## 👨‍💻 Contributing
-
-Pull requests are welcome!
-
-```bash
-git clone https://github.com/rajanprajapati/griffinui
-cd griffinui
-npm install
-npm run dev
+export default () => <CustomPicker />;
 ```
 
 ---
 
-## 📄 License
+## 🧪 Development
 
-MIT License © [Rajan Prajapati](https://www.npmjs.com/~rajanprajapati)
+To work on this locally:
+
+```bash
+# Inside TwinCal root
+npm link
+
+# In your test or app project
+npm link twincal
+```
 
 ---
 
-## 🌟 Stay Connected
+## 📅 Roadmap
 
-Star the repo and share your feedback to help improve Griffin UI!
+- [x] Date range selection
+- [x] Keyboard navigation
+- [ ] Single date picker mode
+- [ ] Presets (e.g., Last 7 Days, This Month)
+- [ ] Theme support (dark mode, custom colors)
+- [ ] Multi-month view
+
+---
+
+## 🧠 Inspiration
+
+TwinCal is inspired by the simplicity of tools like MUI DatePicker and the flexibility of tools like `react-day-picker`—but reimagined with clean styled-components integration.
+
+---
+
+## 📜 License
+
+MIT © 2025 Rajan Prajapati
+```
